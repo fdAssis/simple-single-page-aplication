@@ -4,10 +4,11 @@
 }
  
 #list a {
-  background: #fff;
+  background: #3d3d4d;
   border-radius: 5px;
   width: 100%;
   padding: 24px;
+  margin: 10px;
   display: block;
   text-decoration: none;
   display: flex;
@@ -15,18 +16,26 @@
   transition: transform 0.2s;
 }
 
-#list img {
+#img {
+  background-color: #a8a8b3;
   width: 64px;
   height: 64px;
   border-radius: 50%;
 }
+
+#img h6 {
+  text-align: center;
+  font-size: 46px;
+  color: #fff;
+}
+
 #list div {
   margin-left: 16px;
 }
 
 #list strong{
   font-size: 20px;
-  color: #3d3d4d;
+  color: #fff;
 }
 
 #list p {

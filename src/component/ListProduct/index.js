@@ -1,29 +1,38 @@
-import React, { useState } from 'react';
-import { FiChevronRight } from 'react-icons/fi'
+import React from 'react';
+import { useCollection } from 'react-firebase-hooks/firestore'
 
+import { FiChevronRight } from 'react-icons/fi'
 import './style.css'
 
 import Api from '../../services/firebase';
 
-const ListProduct = () => {
+function ListProduct() {
 
-
-  return (<>
-    <div id="list">
-      <a href="teste">
-        <img
-          src="https://avatars1.githubusercontent.com/u/43320138?s=460&u=83e00cc7d76057e6eee42c085c444b47f16d87fa&v=4"
-          alt="Francisco"
-        />
-        <div >
-          <strong>francisco/repository</strong>
-          <p>Aqui tem uma descricoa</p>
-        </div>
-        <FiChevronRight size={20} />
-      </a>
-    </div>
-  </>
+  const [produtos, loading, error] = useCollection(
+    Api.firestore().collection('products'),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
   );
-};
+
+  return (
+    <div id="list">
+      {error && <strong>Error: {JSON.stringify(error)}</strong>}
+      {loading && <span>Collection: Loading...</span>}
+      {produtos && produtos.docs.map(doc => (
+        <a key={doc.id} href="teste">
+          <div id="img">
+            <h6>{doc.data().produto.substr(0,1)}</h6>
+          </div>
+          <div>
+            <strong>{doc.data().produto}</strong>
+            <p> R$: {doc.data().preco}</p>
+          </div>
+          <FiChevronRight size={20} />
+        </a>
+      ))}
+    </div>
+  );
+}
 
 export default ListProduct;

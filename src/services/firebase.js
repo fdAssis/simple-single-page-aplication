@@ -12,31 +12,5 @@ const firebaseConfig = {
   };
   
 const app = firebase.initializeApp(firebaseConfig);
-const db = app.firestore();
 
-var products = [];
-
-export default {
-  saveProduct: async (product) => {
-    if(!product) return null;
-
-    return await db.collection('products').add(product).then(docRef=>{
-      return product;
-    }).catch(e=>null);
-  },
-
-  getProduct: async () => {
-    return await db.collection('products').get().then(
-      snapshot => {
-        snapshot.docs.forEach(pro => {
-          products.push(pro.data());
-        });
-        return products;
-      }
-    )
-  },
-
-  listPro: () => {
-    return products;
-  }
-}
+export default app;
