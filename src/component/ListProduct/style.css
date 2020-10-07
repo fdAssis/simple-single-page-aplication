@@ -1,50 +1,37 @@
-#list {
-  margin-top: 80px;
-  max-width: 700px;
+body{
+  background: #f2f2f2;
+  font-family: 'Poppins', sans-serif;
 }
- 
-#list a {
-  background: #3d3d4d;
-  border-radius: 5px;
-  width: 100%;
-  padding: 24px;
-  margin: 10px;
-  display: block;
+
+h3{
+  font-family: 'Poppins', sans-serif;
+}
+
+.social-box .box{
+  background: #FFF;
+  border-radius: 10px; 
+  padding: 40px 10px;
+  margin: 20px 0px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.social-box .box:hover{
+ box-shadow: 0 0 6px #4183D7;
+}
+
+.social-box .box .box-text{
+  margin:20px 0px;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.social-box .box .box-btn a{
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  transition: transform 0.2s;
+  color: #4183D7;
+  font-size: 16px;
 }
 
-#img {
-  background-color: #a8a8b3;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-}
-
-#img h6 {
-  text-align: center;
-  font-size: 46px;
-  color: #fff;
-}
-
-#list div {
-  margin-left: 16px;
-}
-
-#list strong{
-  font-size: 20px;
-  color: #fff;
-}
-
-#list p {
-  font-size: 18px;
-  color: #a8a8b3;
-  margin-top: 4px;
-}
-
-#list svg {
-  margin-left: auto;
-  color: #a8a8b3;
+.fa{
+   color:#4183D7;
 }

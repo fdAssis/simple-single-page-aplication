@@ -16,22 +16,39 @@ function ListProduct() {
   );
 
   return (
-    <div id="list">
-      {error && <strong>Error: {JSON.stringify(error)}</strong>}
-      {loading && <span>Collection: Loading...</span>}
-      {produtos && produtos.docs.map(doc => (
-        <a key={doc.id} href="teste">
-          <div id="img">
-            <h6>{doc.data().produto.substr(0,1)}</h6>
-          </div>
-          <div>
-            <strong>{doc.data().produto}</strong>
-            <p> R$: {doc.data().preco}</p>
-          </div>
-          <FiChevronRight size={20} />
-        </a>
-      ))}
+
+    <div className="social-box">
+      <div className="container">
+        <div className="row">
+          {error && <strong>Error: {JSON.stringify(error)}</strong>}
+          {loading && <span>Collection: Loading...</span>}
+          {produtos && produtos.docs.map(doc => (
+            <div className="col-lg-4 col-xs-12 text-center">
+              <div className="box">
+                <i aria-hidden="true"></i>
+                
+                <div className="box-title">
+                  <h3>{doc.data().produto}</h3>
+                </div>
+
+                <div className="box-text">
+                  <span>
+                    Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret
+                  qui ad.
+                  </span>
+                </div>
+                
+                <div className="box-btn">
+                <a href="#">Learn More</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
+
+
   );
 }
 
