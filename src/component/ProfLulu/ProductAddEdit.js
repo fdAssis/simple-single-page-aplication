@@ -1,6 +1,6 @@
 import React from 'react';
 import NumberInput from './NumberInput.js';
-import {saveProduct,updateProduct} from '../database.js';
+import {saveProduct,updateProduct} from '../../database.js';
 import Product from "../entity/Product.js"
 
 
@@ -9,22 +9,37 @@ export default class ProductAddEdit extends React.Component {
   constructor(props){
     super(props);
 
-    const {id,name,price,quantity} = this.props.product;
-
-    this.state={
-      id,
-      name,
-      quantity,
-      price,
-      msg:null
-    };
+    if(this.props.product){
+      const {id,name,price,quantity} = this.props.product;
+      this.state={
+        id,
+        name,
+        quantity,
+        price,
+        msg:null
+      };
+    }else{
+      this.state={
+        name:'',
+        quantity:1,
+        price:0,
+        msg:null
+      };
+    }
   }
 
   save=()=>{
     const {id,name,price,quantity} = this.state;
+
+    if(!name){
+      this.setState({msg:'Informe o nome do produto'});
+      return;
+    }
+ 
+
     let p=new Product({id, name,price,quantity});
 
-    if(id==undefined){
+    if(id===undefined){
       saveProduct(p).then(prod=>this.setState({id:prod.id}));
     }else{
       updateProduct(p);
@@ -33,6 +48,7 @@ export default class ProductAddEdit extends React.Component {
   }
 
   changeName=(event)=>{
+
     if(event.target.value.length>15) return;
 
     this.setState({name:event.target.value,msg:null});
