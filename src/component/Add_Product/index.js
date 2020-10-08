@@ -23,7 +23,10 @@ const AddProduct = () => {
       quantidade,
     }
 
-    await Api.saveProduct(product);
+    await Api.firestore().collection('products').add(product).then(() => {
+      console.log("Dados Salvos")
+    });
+
     setProduto('');
     setPreco(0);
     setQuantidade(0);

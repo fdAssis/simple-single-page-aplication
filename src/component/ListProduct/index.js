@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { useCollection } from 'react-firebase-hooks/firestore'
 
 import { FiChevronRight } from 'react-icons/fi'
@@ -17,29 +18,32 @@ function ListProduct() {
 
   return (
 
-    <div className="social-box">
+    <div className="product-box">
       <div className="container">
         <div className="row">
           {error && <strong>Error: {JSON.stringify(error)}</strong>}
           {loading && <span>Collection: Loading...</span>}
           {produtos && produtos.docs.map(doc => (
-            <div className="col-lg-4 col-xs-12 text-center">
+            <div key={doc.id} className="col-lg-4 col-xs-12 text-center">
               <div className="box">
-                <i aria-hidden="true"></i>
-                
+              <i className="fa" aria-hidden="true">
+               {doc.data().produto}
+              </i>
+              
                 <div className="box-title">
-                  <h3>{doc.data().produto}</h3>
+                  <h3>Preço: R$ {doc.data().preco}</h3>
                 </div>
-
+                
                 <div className="box-text">
                   <span>
-                    Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret
-                  qui ad.
+                    Quantidade: {doc.data().quantidade}
                   </span>
                 </div>
-                
+
                 <div className="box-btn">
-                <a href="#">Learn More</a>
+                <Link to="/" >
+                  Detalhes
+                </Link>
                 </div>
               </div>
             </div>
@@ -47,7 +51,6 @@ function ListProduct() {
         </div>
       </div>
     </div>
-
 
   );
 }
