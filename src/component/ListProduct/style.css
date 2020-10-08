@@ -1,9 +1,5 @@
-body{
-  background: #f2f2f2;
-}
-
 .product-box .box{
-  background: #FFF;
+  background: #f8f9fc;
   border-radius: 10px; 
   padding: 40px 10px;
   margin: 20px 0px;
@@ -12,7 +8,7 @@ body{
 }
 
 .product-box .box:hover{
- box-shadow: 0 0 6px #4183D7;
+ box-shadow: 0 0 8px #29a19c;
 }
 
 .product-box .box .box-text{
@@ -32,5 +28,5 @@ body{
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 50px;
-  color:#4183D7;
+  color:#29a19c;
 }

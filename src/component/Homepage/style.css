@@ -1,0 +1,41 @@
+#principal {
+  height: 100vh;
+  background: #222831;
+}
+
+#menu {
+  background: #202040;
+  padding: 1px;
+  display: block;
+}
+
+#logo {
+  margin-left: 30px;
+  color: azure;
+  font-weight: 700;
+  align-items: center;
+}
+
+#logo svg {
+  margin-right: 20px;
+}
+
+#links {
+  padding-top: 17px;
+  float: right;
+  margin-right: 80px;
+  padding-left: 10px;
+  margin-top: -65px;
+}
+
+.compLink {
+  margin-left: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+.compLink:hover {
+  text-decoration: none;
+  color: #29a19c;
+}

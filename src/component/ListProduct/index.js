@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { useCollection } from 'react-firebase-hooks/firestore'
 
-import { FiChevronRight } from 'react-icons/fi'
 import './style.css'
 
 import Api from '../../services/firebase';
