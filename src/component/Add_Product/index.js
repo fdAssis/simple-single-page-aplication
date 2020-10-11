@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import {FiList} from 'react-icons/fi'
 
 
-import Amount from '../Amount/index'
-import Api from '../../services/firebase';
+import Amount from '../Amount/index';
+import Upload from '../Upload/index';
+import { app } from "../../services/firebase";
 
 import './style.css';
 
@@ -13,6 +14,7 @@ const AddProduct = () => {
   const [produto, setProduto] = useState('');
   const [preco, setPreco] = useState(0);
   const [quantidade, setQuantidade] = useState();
+  const [url, setUrl] = useState(null);
 
   async function handleAddProduct(e) {
     e.preventDefault();
@@ -21,15 +23,17 @@ const AddProduct = () => {
       produto,
       preco,
       quantidade,
+      url,
     }
 
-    await Api.firestore().collection('products').add(product).then(() => {
+    await app.firestore().collection('products').add(product).then(() => {
       console.log("Dados Salvos")
     });
 
     setProduto('');
     setPreco(0);
     setQuantidade(0);
+    setUrl(null)
   }
 
   return (
@@ -56,6 +60,11 @@ const AddProduct = () => {
               max='30'
               value={quantidade}
               onChange={e => setQuantidade(e.target.value)}
+            />
+            <Upload
+              passUploadData={setUrl}
+              value={url}
+              onChange={e => setUrl(e.target.value)}
             />
             <button
               type="submit"

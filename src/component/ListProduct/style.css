@@ -1,5 +1,10 @@
 body{
-  background: #f2f2f2;
+
+}
+
+.box {
+  width: 300px;
+  height: 300px;
 }
 
 .product-box .box{
@@ -14,6 +19,7 @@ body{
 .product-box .box:hover{
  box-shadow: 0 0 6px #4183D7;
 }
+
 
 .product-box .box .box-text{
   margin:20px 0px;
@@ -31,6 +37,6 @@ body{
   font-style: normal;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 30px;
   color:#4183D7;
 }

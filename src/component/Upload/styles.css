@@ -1,0 +1,119 @@
+body {
+  background: #150485;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.file-upload{
+  border: 2px dashed #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: height 0.2s ease;
+}
+
+.file-upload:hover {
+  border: 2px dashed #03c4a1;
+}
+
+
+.file-upload input:hover {
+  color: #03c4a1;
+}
+
+/* Basics */
+label, input {
+  color: #333;
+  font: 14px/20px Arial;
+}
+
+label {
+  display: inline-block;
+  width: 5em;
+  padding: 0 1em;
+  text-align: right;
+}
+
+[type=file] {
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+input,
+[type=file] + label {
+  text-align: left;
+  padding: 20px 20px;
+  width: 150px;
+  margin: 0;
+  left: 0;
+  position: relative;
+}
+[type=file] + label {
+  text-align: center;
+  left: 7.35em;
+  color: #444;
+  border: none;
+  cursor: pointer;
+}
+
+[type=file] + label:hover {
+  color: #03c4a1;
+}
+
+.file-container{
+  margin-top: 20px;
+}
+
+.file-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #444;
+}
+
+.preview img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-right: 10px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+}
+
+.file-info div {
+  display: flex;
+  flex-direction: column; 
+}
+
+.file-info span {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.file-info div button {
+  border: 0;
+  background: transparent;
+  color: #e57878;
+  margin-left: 5px;
+  cursor: pointer;
+}

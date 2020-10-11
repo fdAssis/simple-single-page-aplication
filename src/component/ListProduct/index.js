@@ -5,12 +5,12 @@ import { useCollection } from 'react-firebase-hooks/firestore'
 import { FiChevronRight } from 'react-icons/fi'
 import './style.css'
 
-import Api from '../../services/firebase';
+import { app } from "../../services/firebase";
 
 function ListProduct() {
 
   const [produtos, loading, error] = useCollection(
-    Api.firestore().collection('products'),
+    app.firestore().collection('products'),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
@@ -26,9 +26,13 @@ function ListProduct() {
           {produtos && produtos.docs.map(doc => (
             <div key={doc.id} className="col-lg-4 col-xs-12 text-center">
               <div className="box">
-              <i className="fa" aria-hidden="true">
-               {doc.data().produto}
-              </i>
+                <i className="fa" aria-hidden="true">
+                {doc.data().produto}
+                </i>
+
+                <div className="box-img">
+                  <img src={doc.data().url} width="100" alt=""/>
+                </div>
               
                 <div className="box-title">
                   <h3>Preço: R$ {doc.data().preco}</h3>
