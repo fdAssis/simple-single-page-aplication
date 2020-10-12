@@ -53,18 +53,16 @@ function Upload(props) {
   props.passUploadData(url);
 
   function handledelete() {
-    if(file) {
-      const storageRef = projectStorage.ref('products');
+    const storageRef = projectStorage.ref('products');
 
-      storageRef.child(file.name).delete().then( () => {
-        setFile(null);
-        setError(null);
-        setProgress(0);
-        setUrl(null);
-      }).catch(err => {
-        setError(err);
-      })
-    }
+    storageRef.child(file.name).delete().then( () => {
+      setFile(null);
+      setError(null);
+      setProgress(0);
+      setUrl(null);
+    }).catch(err => {
+      setError(err);
+    })
   }
 
   return (

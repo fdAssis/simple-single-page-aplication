@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {FiList} from 'react-icons/fi'
+import { FiList } from 'react-icons/fi'
 
 
 import Amount from '../Amount/index';
@@ -13,7 +13,7 @@ const AddProduct = () => {
 
   const [produto, setProduto] = useState('');
   const [preco, setPreco] = useState(0);
-  const [quantidade, setQuantidade] = useState();
+  const [quantidade, setQuantidade] = useState(0);
   const [url, setUrl] = useState(null);
 
   async function handleAddProduct(e) {
@@ -42,18 +42,22 @@ const AddProduct = () => {
         <div id="content">
           <form onSubmit={handleAddProduct}>
             <h2>Adicionar Produto</h2>
-            <input
-              className="inputs"
-              placeholder="Produto"
-              value={produto}
-              onChange={e => setProduto(e.target.value)}
-            />
-            <input
-              className="inputs"
-              placeholder="Preco"
-              value={preco}
-              onChange={e => setPreco(e.target.value)}
-            />
+
+            <div id="inputs">
+              <label>Nome do produto</label>
+              <input
+                autoComplete={0}
+                value={produto}
+                onChange={e => setProduto(e.target.value)}
+              />
+              <label>Preço R$</label>
+              <input
+                value={preco}
+                onChange={e => setPreco(e.target.value)}
+              />
+            </div>
+
+            <label htmlFor="">Quantidade</label>
             <Amount
               id="amount"
               passChildData={setQuantidade}
@@ -61,22 +65,21 @@ const AddProduct = () => {
               value={quantidade}
               onChange={e => setQuantidade(e.target.value)}
             />
-            <Upload
-              passUploadData={setUrl}
-              value={url}
-              onChange={e => setUrl(e.target.value)}
-            />
-            <button
-              type="submit"
-              id="buttonSub"
-            >Adicionar
-            </button>
+
+            <button type="submit" id="buttonSub">Adicionar</button>
           </form>
+
+          <Upload
+            passUploadData={setUrl}
+            value={url}
+            onChange={e => setUrl(e.target.value)}
+          />
 
           <Link id="linkList" to="/listProd">
             Listar Produtos
             <FiList />
           </Link>
+
         </div>
 
       </div>

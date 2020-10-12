@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { MdDelete, MdCreate } from 'react-icons/md'
 import { useCollection } from 'react-firebase-hooks/firestore'
 
 import { FiChevronRight } from 'react-icons/fi'
@@ -31,7 +32,7 @@ function ListProduct() {
                 </i>
 
                 <div className="box-img">
-                  <img src={doc.data().url} width="100" alt=""/>
+                  <img src={doc.data().url} alt=""/>
                 </div>
               
                 <div className="box-title">
@@ -45,9 +46,14 @@ function ListProduct() {
                 </div>
 
                 <div className="box-btn">
-                <Link to="/" >
-                  Detalhes
+                <button id="btnDelete" onClick={() => {}}>
+                  <MdDelete size={34} color="#f56a79"/>
+                </button>
+
+                <Link id="link" to="/teste">
+                  <MdCreate style={{ marginLeft: 30 }} size={34} color="#03c4a1"/>
                 </Link>
+        
                 </div>
               </div>
             </div>

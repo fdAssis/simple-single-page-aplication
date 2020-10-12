@@ -1,20 +1,22 @@
-body{
-
-}
 
 .box {
-  width: 300px;
-  height: 300px;
+  min-width: 300px;
 }
 
 .product-box .box{
-  background: #FFF;
+  background: #fff;
   border-radius: 10px; 
   padding: 40px 10px;
-  margin: 20px 0px;
+  margin: 20px 70px;
   cursor: pointer;
   transition: all 0.5s ease-out;
 }
+
+.box-img img{
+  border-radius: 10px;
+  width: 150px;
+  margin-top: 10px;
+} 
 
 .product-box .box:hover{
  box-shadow: 0 0 6px #4183D7;
@@ -36,7 +38,12 @@ body{
 .fa{
   font-style: normal;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 30px;
+  font-weight: 600;
+  font-size: 25px;
   color:#4183D7;
+}
+
+#btnDelete {
+  border-style: none;
+  background: none;
 }
