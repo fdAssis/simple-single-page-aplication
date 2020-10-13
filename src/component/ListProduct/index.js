@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import { MdDelete, MdCreate } from 'react-icons/md'
 import { useCollection } from 'react-firebase-hooks/firestore'
 
-import { FiChevronRight } from 'react-icons/fi'
 import './style.css'
 
 import { app } from "../../services/firebase";
