@@ -1,67 +1,40 @@
 .container {
-  height: 100%;
+  border: dashed #03c4a1 3px;
+  border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+  width: 250px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  right: 14%;
+  margin-top: 3px;
+  margin-bottom: 30px;
 }
 
 .content {
   width: 100%;
-  max-width: 400px;
-  margin: 30px;
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
+  text-align: left;
 }
 
-.file-upload{
-  border: 2px dashed #ddd;
-  border-radius: 4px;
-  max-width: 360px;
-  min-width: 100px;
-  cursor: pointer;
-  transition: height 0.2s ease;
+.file-upload {
+  margin-top: 10px;
+  padding: 0;
 }
 
-.file-upload:hover {
-  border: 2px dashed #03c4a1;
+.file-upload label{
+  width: 100%;
+  color: #999;
+  
 }
 
-
-.file-upload input:hover {
+.file-upload label:hover{
   color: #03c4a1;
+  
 }
 
 [type=file] {
-    position: absolute;
-    filter: alpha(opacity=0);
-    opacity: 0;
-}
-#f02input,
-[type=file] + label {
-  text-align: center;
-  padding: 20px 20px;
-  position: relative;
-  margin-left: 80px;
-}
-[type=file] + label {
-  text-align: center;
-  color: #444;
-  cursor: pointer;
-}
-
-[type=file] + label:hover {
-  color: #03c4a1;
-}
-
-@media (min-width: 700px) {
-  #f02input, [type=file] + label {
-    margin-left: 6em;
-  }
-}
-
-.file-container{
-  margin-top: 20px;
+  position: absolute;
+  filter: alpha(opacity=0);
+  opacity: 0;
 }
 
 .file-container li {
@@ -103,4 +76,16 @@
   color: #e57878;
   margin-left: 5px;
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 991px) {
+  .container {
+    right: 31%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .container {
+    right: 19%;
+  }
 }

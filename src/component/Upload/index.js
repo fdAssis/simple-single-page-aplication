@@ -7,7 +7,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import './styles.css';
 import "react-circular-progressbar/dist";
 
-function Upload(props) {
+function Upload({passUploadUrl, passUploadImg}) {
 
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
@@ -47,10 +47,13 @@ function Upload(props) {
         setUrl(downloadUrl);
       }
       );
+      
+      passUploadImg(file.name);
+      
     }
   }, [file]);
-
-  props.passUploadData(url);
+  
+  passUploadUrl(url);
 
   function handledelete() {
     const storageRef = projectStorage.ref('products');
@@ -71,18 +74,16 @@ function Upload(props) {
         <div className="content">
 
           <div className="file-upload">
+            
+              <label for="file-input">Adicionar uma imagem</label>
+              {!url &&
               <input 
-                id="f02" 
+                id="file-input" 
                 type="file"
-                placeholder="Envie uma imagem"
                 onChange={handleChange}
                />
-              
-              <label 
-                for="f02"
-              >
-                Envie uma imagem
-              </label>
+              }
+            
           </div>
 
           {error && <MdError style={{alignSelf:"center"}} size={45} color="#e57878"/> }
