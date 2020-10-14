@@ -22,12 +22,12 @@ function ListProduct() {
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
         {loading && <span>Collection: Loading...</span>}
         {produtos && produtos.docs.map(doc => (
-          <div key={doc.id} className='col-md-4-auto'>
+          <div key={doc.id} className='col-md-4'>
             <Card 
               imgsrc={doc.data().img.url} 
-              title={doc.data().produto} 
-              price={doc.data().preco}
-              quant={doc.data().quantidade}
+              title={doc.data().product} 
+              price={doc.data().price}
+              quant={doc.data().quantity}
               id={doc.id}
               imgName={doc.data().img.name_img}
             />

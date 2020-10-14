@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 
 const Amount = (props) => {
-  const [c_value, setValue] = useState(0);
+  const [c_value, setValue] = useState(props.c_value);
 
   function handleMinus() {
     if (c_value <= 0) {

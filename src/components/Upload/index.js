@@ -7,13 +7,12 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import './styles.css';
 import "react-circular-progressbar/dist";
 
-function Upload({passUploadUrl, passUploadImg}) {
+function Upload({passUploadUrl, passUploadImg, value, name_img}) {
 
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [url, setUrl] = useState(null);
-
+  const [url, setUrl] = useState(value);
 
   const types = ["image/png", "image/jpeg", "image/jpg"];
 
@@ -56,10 +55,19 @@ function Upload({passUploadUrl, passUploadImg}) {
   
   passUploadUrl(url);
 
+  console.log(name_img)
+
   function handledelete() {
     const storageRef = projectStorage.ref('products');
+    let nameImage = '';
 
-    storageRef.child(file.name).delete().then( () => {
+    if (name_img) {
+      nameImage = name_img;
+    } else{
+      nameImage = file.name;
+    }
+
+    storageRef.child(nameImage).delete().then( () => {
       setFile(null);
       setError(null);
       setProgress(0);
@@ -91,13 +99,12 @@ function Upload({passUploadUrl, passUploadImg}) {
 
           <ul className="file-container">
             <li>
-              {url && file &&
+              {url && 
                 <div className="preview">
                   <img src={url}></img>
 
                   <div className="file-info">
                     <div>
-                      <strong>{file.name}</strong>
                       <span>
                         {!!url && (
                           <button onClick={() => handledelete()}>
