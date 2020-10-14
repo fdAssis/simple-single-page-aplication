@@ -1,61 +1,22 @@
-<<<<<<< HEAD
-
-.box {
-  min-width: 300px;
+.row {
+  display: flex;
+  padding: 0 30px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.product-box .box{
-  background: #fff;
-=======
-.product-box .box{
-  background: #f8f9fc;
->>>>>>> feature/homepage
-  border-radius: 10px; 
-  padding: 40px 10px;
-  margin: 20px 70px;
-  cursor: pointer;
-  transition: all 0.5s ease-out;
+.col-md-4-auto {
+  margin-top: -90px;
+  margin-bottom: 110px;
 }
 
-.box-img img{
-  border-radius: 10px;
-  width: 150px;
-  margin-top: 10px;
-} 
-
-.product-box .box:hover{
- box-shadow: 0 0 8px #29a19c;
+@media screen and (max-width: 991px) {
+  .row {
+    border: solid red 2px;
+  }
 }
-
-
-.product-box .box .box-text{
-  margin:20px 0px;
-  font-size: 15px;
-  line-height: 30px;
+@media screen and (max-width: 575px) {
+  .row {
+    border: solid white 2px;
+  }
 }
-
-.product-box .box .box-btn a{
-  text-decoration: none;
-  color: #4183D7;
-  font-size: 16px;
-}
-
-.fa{
-  font-style: normal;
-  font-family: 'Open Sans', sans-serif;
-<<<<<<< HEAD
-  font-weight: 600;
-  font-size: 25px;
-  color:#4183D7;
-}
-
-#btnDelete {
-  border-style: none;
-  background: none;
-}
-=======
-  font-weight: 700;
-  font-size: 50px;
-  color:#29a19c;
-}
->>>>>>> feature/homepage

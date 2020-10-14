@@ -1,6 +1,5 @@
 .page-content {
 	width: 100%;
-	margin:  0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -139,7 +138,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media screen and (max-width: 991px) {
 	.form-content {
-		margin: 180px 20px;
 		flex-direction:  column;
 	}
 	.form-content .form-left {
@@ -149,7 +147,7 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 	.form-content .form-detail {
 		padding: 30px 20px 30px 20px;
-	    width: auto;
+	  width: auto;
 	}
 }
 @media screen and (max-width: 575px) {

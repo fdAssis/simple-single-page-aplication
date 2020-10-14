@@ -1,41 +1,67 @@
-#principal {
-  height: 100vh;
-  background: #222831;
+
+nav {
+  list-style: none;
 }
 
-#menu {
-  background: #202040;
-  padding: 1px;
-  display: block;
-}
-
-#logo {
-  margin-left: 30px;
-  color: azure;
-  font-weight: 700;
+/* HEADER */
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0px 50px;
+  color: #fff;
 }
 
-#logo svg {
-  margin-right: 20px;
+header nav {
+  display: flex;
 }
 
-#links {
-  padding-top: 17px;
-  float: right;
-  margin-right: 80px;
-  padding-left: 10px;
-  margin-top: -65px;
+header a {
+  margin: 0 15px;
+  cursor: pointer;
+} 
+
+.link-component { 
+  color: #fbfbfc;
+  display: block;
+  margin-top: 24px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
-.compLink {
-  margin-left: 30px;
-  font-size: 20px;
-  font-weight: 700;
-  color: aliceblue;
+.link-component svg{
+    margin-right: 15px;
 }
 
-.compLink:hover {
-  text-decoration: none;
-  color: #29a19c;
+header a:first-child {
+  margin-left: 0;
+}
+
+header a:last-child {
+  margin-right: 0;
+}
+
+#body {
+  display: flex;
+  align-items: center;
+  margin-top: 108px;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+  header img {
+    margin-bottom: 15px;
+  }
+
+  #body{
+    margin-top: 160px;
+  }
 }

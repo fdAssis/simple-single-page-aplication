@@ -52,6 +52,7 @@ function Upload({passUploadUrl, passUploadImg}) {
       
     }
   }, [file]);
+
   
   passUploadUrl(url);
 
@@ -75,7 +76,7 @@ function Upload({passUploadUrl, passUploadImg}) {
 
           <div className="file-upload">
             
-              <label for="file-input">Adicionar uma imagem</label>
+              <label htmlFor="file-input">Adicionar uma imagem</label>
               {!url &&
               <input 
                 id="file-input" 

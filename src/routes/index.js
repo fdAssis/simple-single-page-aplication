@@ -7,9 +7,8 @@ import homepage from '../component/Homepage';
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact component={AddProduct} />
+    <Route path="/" exact component={homepage} />
     <Route path="/listProd" exact component={listProd} />
-    <Route path="/homepage" exact component={homepage} />
   </Switch>
 );
 

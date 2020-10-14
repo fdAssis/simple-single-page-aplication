@@ -23,7 +23,7 @@
 .file-upload label{
   width: 100%;
   color: #999;
-  
+  cursor: pointer;
 }
 
 .file-upload label:hover{

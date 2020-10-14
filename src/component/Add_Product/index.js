@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiList } from 'react-icons/fi'
-
 
 import Amount from '../Amount/index';
 import Upload from '../Upload/index';
@@ -16,6 +13,7 @@ const AddProduct = () => {
   const [quantidade, setQuantidade] = useState(0);
   const [url, setUrl] = useState(null);
   const [name_img, setName_img] = useState('');
+  const [teste, setTeste] = useState('');
 
   async function handleAddProduct(e) {
     e.preventDefault();
@@ -60,9 +58,9 @@ const AddProduct = () => {
 
             <p className="text-2"><span>Disciplina:</span> Programação para Dispositivos Móveis</p>
             <div className="form-left-last">
-              <Link id="linkList" to="/listProd">
-                <input type="submit" name="account" className="account" value="Lista de Produtos" />
-              </Link>
+              <a id="linkList" href="https://github.com/fdAssis/simple-single-page-aplication" target="_blank">
+                <input type="submit" name="account" className="account" value="Github" />
+              </a>
             </div>
           </div>
 
@@ -111,12 +109,18 @@ const AddProduct = () => {
                 passUploadUrl={setUrl}
                 passUploadImg={setName_img}
                 value={url}
+                issoeumteste={teste}
                 onChange={e => setUrl(e.target.value)}
               />
             </div>
 
             <div className="form-row-last">
-              <input type="submit" name="add" className="add" value="Adicionar produto"/>
+              <input 
+                type="submit" 
+                name="add" 
+                className="add" 
+                value="Adicionar produto"
+              />
             </div>     
           </form>
         </div>
